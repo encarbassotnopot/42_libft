@@ -6,11 +6,11 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 22:53:48 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/07 22:53:50 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/08 12:51:40 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);

@@ -2,6 +2,9 @@ C_FILES = $(wildcard *.c)
 OBJ_FILES = $(patsubst %.c,%.o,$(C_FILES))
 HDR_FILES = libft.h
 
+TEST_FILES = $(wildcard tests/*.c)
+TEST_OBJS = $(patsubst %.c,%.o,$(TEST_FILES))
+
 OUT = libft.a
 
 CC = cc
@@ -16,6 +19,11 @@ $(OUT): $(OBJ_FILES) $(HDR_FILES)
 
 $(OBJ_FILES): %.o:%.c
 
+test: $(TEST_OBJS) 
+
+$(TEST_OBJS): $(TEST_FILES) $(OUT)
+	$(CC) $< -o $@ -I. -L. -lft
+
 clean reclean:
 	rm -f $(OBJ_FILES)
 
@@ -24,4 +32,4 @@ fclean: clean
 
 re: fclean all reclean
 
-.PHONY: all fclean all reclean re
+.PHONY: all fclean reclean re test
