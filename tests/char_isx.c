@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 10:24:19 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/08 12:48:49 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/09 19:22:09 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ unsigned int	test_sign(int start, int end, int (*orig)(int),
 	return (count);
 }
 
-int	main(void)
+int	main()
 {
 	int	oks;
 
@@ -62,7 +62,7 @@ int	main(void)
 	for (int i = 0; i < 5; i++)
 	{
 		printf("Now testing function %s\n", names[i]);
-		oks = test_sign(0, 128, orig[i], mine[i]);
+		oks += test_sign(0, 128, orig[i], mine[i]);
 		printf("Done: %d errors found\n", oks);
 	}
 }

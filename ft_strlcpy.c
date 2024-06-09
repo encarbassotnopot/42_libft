@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/09 19:51:06 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/09 22:27:59 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/09 22:32:54 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-#endif
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	count;
+
+	count = 0;
+	while (src[count] != '\0' || count < size)
+	{
+		if (count < size)
+		{
+			dst[count] = src[count];
+		}
+		else if (count == size && size != 0)
+		{
+			dst[count - 1] = '\0';
+		}
+		if (src[count] == '\0')
+		{
+			dst[count] = src[count];
+			return (count);
+		}
+		count++;
+	}
+	return (count);
+}
+

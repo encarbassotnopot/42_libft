@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/09 19:51:06 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/09 21:06:11 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/09 21:13:55 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-#endif
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t		i;
+	char		arr[n];
+	const char	*my_src;
+	char		*my_dest;
+
+	my_src = src;
+	my_dest = dest;
+	i = 0;
+	while (i < n)
+	{
+		arr[i] = my_src[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		my_dest[i] = arr[i];
+		i++;
+	}
+	return (dest);
+}

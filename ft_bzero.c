@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/09 19:51:06 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/09 19:45:03 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/09 20:33:26 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-#ifndef LIBFT_H
-# define LIBFT_H
+void	ft_bzero(void *ptr, size_t n)
+{
+	size_t	i;
+	char	*my_ptr;
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-#endif
+	i = 0;
+	my_ptr = ptr;
+	while (i < n)
+	{
+		my_ptr[i++] = 0;
+	}
+}

@@ -25,7 +25,7 @@ $(TEST_OBJS): $(TEST_FILES) $(OUT)
 	$(CC) $< -o $@ -I. -L. -lft
 
 clean reclean:
-	rm -f $(OBJ_FILES)
+	rm -f $(OBJ_FILES) $(TEST_OBJS)
 
 fclean: clean
 	rm -f $(OUT)
