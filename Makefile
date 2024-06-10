@@ -22,7 +22,7 @@ $(OBJ_FILES): %.o:%.c
 test: $(TEST_OBJS) 
 
 $(TEST_OBJS): %.o:%.c $(OUT)
-	$(CC) -w $< -g -o $@ -I. -L. -lft
+	$(CC) -w $< -g -o $@ -I. -L. -lft -lbsd
 
 clean reclean:
 	rm -f $(OBJ_FILES) $(TEST_OBJS)
