@@ -6,12 +6,12 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:12:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/10 16:52:09 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:49:05 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
-int	ft_strncmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned int	index;
 	const char		*my_s1;

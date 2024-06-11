@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:13:57 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 15:56:04 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:44:55 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int	main(void)
 	int		errors;
 	char	*names[] = {"ft_memset", "ft_bzero", "ft_memcpy", "ft_memmove"};
 
-	void (*mine[])() = {ft_memset, ft_bzero, ft_memcpy,	ft_memmove};
+	void (*mine[])() = {ft_memset, ft_bzero, ft_memcpy,
+		ft_strlcat};
 	void (*orig[])() = {memset, bzero, memcpy, memmove};
 	for (int i = 0; i < 4; i++)
 	{
