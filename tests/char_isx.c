@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 10:24:19 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/09 19:22:09 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:05:01 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,29 @@ int	get_sign(int i)
 	return (0);
 }
 
-// tests a custom implementation of a function against the original one
-// returns count of mismatched returns
-unsigned int	test_sign(int start, int end, int (*orig)(int),
-		int (*mine)(int))
+// returns the same int
+int	do_nothing(int i)
 {
-	unsigned int	count;
-	int				orig_ret;
-	int				mine_ret;
+	return (i);
+}
+
+// tests a custom implementation of a function against the original one
+// returns count of mismatched returns. applies the given transformation
+// to the return value before comparing.
+int	test_sign(int start, int end, int (*orig)(int),
+		int (*mine)(int), int (*trans)(int))
+{
+	int	count;
+	int	orig_ret;
+	int	mine_ret;
 
 	count = 0;
 	if (start > end)
 		return (-1);
 	for (int i = start; i <= end; i++)
 	{
-		orig_ret = get_sign(orig(i));
-		mine_ret = get_sign(mine(i));
+		orig_ret = trans(orig(i));
+		mine_ret = trans(mine(i));
 		if (orig_ret != mine_ret)
 		{
 			printf("MISMATCH with value %d!: orig is %d, mine is %d\n", i,
@@ -50,19 +57,22 @@ unsigned int	test_sign(int start, int end, int (*orig)(int),
 	return (count);
 }
 
-int	main()
+int	main(void)
 {
 	int	oks;
 
-	int (*orig[5])(int) = {isalpha, isdigit, isascii, isprint, isalnum};
-	int (*mine[5])(int) = {ft_isalpha, ft_isdigit, ft_isascii, ft_isprint,
-		ft_isalnum};
-	char *names[5] = {"ft_isalpha", "ft_isdigit", "ft_isascii", "ft_isprint",
-		"ft_isalnum"};
-	for (int i = 0; i < 5; i++)
+	int (*orig[])(int) = {isalpha, isdigit, isascii, isprint, isalnum, toupper,
+		tolower};
+	int (*mine[])(int) = {ft_isalpha, ft_isdigit, ft_isascii, ft_isprint,
+		ft_isalnum, ft_toupper, ft_tolower};
+	int (*trans[])(int) = {get_sign, get_sign, get_sign, get_sign, get_sign,
+		do_nothing, do_nothing};
+	char *names[] = {"ft_isalpha", "ft_isdigit", "ft_isascii", "ft_isprint",
+		"ft_isalnum", "ft_toupper", "ft_tolower"};
+	for (int i = 0; i < 7; i++)
 	{
 		printf("Now testing function %s\n", names[i]);
-		oks += test_sign(0, 128, orig[i], mine[i]);
+		oks = test_sign(-10, 140, orig[i], mine[i], trans[i]);
 		printf("Done: %d errors found\n", oks);
 	}
 }
