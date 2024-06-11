@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:21:45 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 12:37:54 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:52:56 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -17,10 +17,10 @@ char	*ft_strchr(char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			candidate = s
+			candidate = s;
 		s++;
 	}
 	if (c == '\0')
 		return (s);
-	return (candidate);
+	return ((char *)candidate);
 }

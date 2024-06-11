@@ -6,20 +6,22 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 12:52:55 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:53:24 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memchr(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	char	*my_s;
 
+	my_s = (char *)s;
 	i = 0;
-	while (*s[i] != c && i < n)
+	while (my_s[i] != c && i < n)
 	{
 		i++;
 	}
-	return (s[i]);
+	return (*(void **)(&my_s[i]));
 }
