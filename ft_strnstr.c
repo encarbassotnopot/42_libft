@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 18:32:46 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 14:50:18 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/12 12:54:21 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/12 13:05:06 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
-char	*ft_strstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	found_index;
 	char	*my_big;
