@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 15:48:57 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:39:08 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
-char	*ft_strstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 #endif
