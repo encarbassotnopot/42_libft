@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 17:48:18 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 18:50:22 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/13 18:57:10 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/13 19:03:59 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <stddef.h>
 #include <stdlib.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	size_t	total;
+	size_t	count;
+	char	*dst;
 
-	total = nmemb * size;
-	if (total / nmemb == size)
-		return (malloc(nmemb * size));
-	return (NULL);
+	dst = malloc(ft_strlen(s));
+	if (!dst)
+		return (NULL);
+	count = 0;
+	while (s[count] != '\0')
+	{
+		dst[count] = s[count];
+		count++;
+	}
+	return (dst);
 }
