@@ -6,11 +6,12 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:05:26 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:08:52 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:19:08 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests/tests.h"
+#include <stdio.h>
 
 int	main(void)
 {

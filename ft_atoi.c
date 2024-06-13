@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:06:37 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 16:17:37 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:18:22 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	ft_atoi(char *str)
 	{
 		result *= 10;
 		result += *str - '0';
-		if (result < 0)
-			return (0);
 		str++;
 	}
 	return (sign * (int)result);
