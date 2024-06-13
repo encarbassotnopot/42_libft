@@ -6,11 +6,12 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 14:53:24 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:47:30 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -19,9 +20,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	my_s = (char *)s;
 	i = 0;
-	while (my_s[i] != c && i < n)
+	while (i < n)
 	{
+		if (my_s[i] == c)
+		{
+			return ((&my_s[i]));
+		}
 		i++;
 	}
-	return (*(void **)(&my_s[i]));
+	return(NULL);
 }

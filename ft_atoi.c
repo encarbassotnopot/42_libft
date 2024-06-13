@@ -6,14 +6,14 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:06:37 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/10 16:38:34 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:17:37 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char *str)
 {
-	int	sign;
-	int	result;
+	int				sign;
+	unsigned int	result;
 
 	sign = 1;
 	result = 0;
@@ -31,5 +31,5 @@ int	ft_atoi(char *str)
 			return (0);
 		str++;
 	}
-	return (sign * result);
+	return (sign * (int)result);
 }

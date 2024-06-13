@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:54:21 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/12 13:05:06 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:43:54 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (*my_big != '\0' && len-- > 0)
 	{
 		while (my_big[found_index] == my_little[found_index]
-			&& my_little[found_index] != '\0')
+			&& my_little[found_index] != '\0' && found_index <= len)
 		{
 			found_index++;
 		}
