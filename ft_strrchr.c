@@ -6,14 +6,16 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:21:45 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/11 15:54:09 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 18:12:45 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *candidate = NULL;
+	char	*candidate;
+
+	candidate = NULL;
 	while (*s != '\0')
 	{
 		if (*s == c)

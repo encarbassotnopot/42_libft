@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 18:03:04 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/13 17:48:18 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/13 17:54:06 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-#include <stddef.h>
-#include <stdio.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	char	*my_s;
-
-	my_s = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (my_s[i] == c)
-		{
-			return ((&my_s[i]));
-		}
-		i++;
-	}
-	return (NULL);
+	return (malloc(nmemb * size));
 }

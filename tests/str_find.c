@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:13:57 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 16:47:42 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/13 18:10:43 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,12 @@ unsigned int	test_strnstr(void)
 			(intptr_t)ft_strnstr(mem, "123", 100));
 	errs += compare_outs((intptr_t)strnstr("123", mem, 100),
 			(intptr_t)ft_strnstr("123", mem, 100));
+	errs += compare_outs((intptr_t)strnstr("", mem, 100),
+			(intptr_t)ft_strnstr("", mem, 100));
+	errs += compare_outs((intptr_t)strnstr(mem, mem, 100),
+			(intptr_t)ft_strnstr(mem, mem, 100));
+	errs += compare_outs((intptr_t)strnstr("", "", 100),
+			(intptr_t)ft_strnstr("", "", 100));
 	return (errs);
 }
 unsigned int	test_atoi(void)
