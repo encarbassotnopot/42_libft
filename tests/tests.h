@@ -6,12 +6,14 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:15:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:21:35 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:22:48 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_T
+# include <stddef.h>
+# include <stdint.h>
 
 unsigned int	test_bzero(void);
 unsigned int	test_memcpy(void);
@@ -26,4 +28,13 @@ unsigned int	test_atoi(void);
 unsigned int	test_strlen(void);
 unsigned int	test_memmove(void);
 unsigned int	test_memset(void);
+unsigned int	test_strdup(void);
+unsigned int	test_strl_x(void);
+void			print_mem(const char *start, size_t len);
+int				test_mem(unsigned char *my_mem, unsigned char *og_mem,
+					unsigned char *my_dst, unsigned char *og_dst,
+					size_t mem_size);
+int				test_one_mem(unsigned char *my_mem, unsigned char *og_mem,
+					size_t mem_size);
+unsigned int	compare_outs(intptr_t orig, intptr_t mine);
 #endif

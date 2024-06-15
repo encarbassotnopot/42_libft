@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:57:10 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:03:59 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:04:59 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	size_t	count;
 	char	*dst;
 
-	dst = malloc(ft_strlen(s));
+	dst = malloc(ft_strlen(s) + 1);
 	if (!dst)
 		return (NULL);
 	count = 0;
@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s)
 		dst[count] = s[count];
 		count++;
 	}
+	dst[count] = '\0';
 	return (dst);
 }

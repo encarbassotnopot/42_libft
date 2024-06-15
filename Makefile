@@ -8,7 +8,7 @@ TEST_OBJS = $(patsubst %.c,%.o,$(TEST_SRCS))
 OUT = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 ARFLAGS = rc
 
@@ -19,10 +19,13 @@ $(OUT): $(OBJ_FILES) $(HDR_FILES)
 
 $(OBJ_FILES): %.o:%.c
 
-test: $(TEST_OBJS) 
+test: tests/tests.o
+
+tests/tests.o: $(TEST_OBJS) 
+	$(CC) -o $@ -g $^ -I. -L. -lft -lbsd
 
 $(TEST_OBJS): %.o:%.c $(OUT)
-	$(CC) -w $< -g -c -o $@ -I. -L. -lft -lbsd
+	$(CC) $< -g -c -o $@ -I. -L. -lft -lbsd
 
 clean reclean:
 	rm -f $(OBJ_FILES) $(TEST_OBJS)

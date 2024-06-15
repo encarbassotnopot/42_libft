@@ -6,20 +6,23 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:11:29 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:12:10 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:00:00 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "tests/tests.h"
-int	test_memset(void)
-{
-	int				errs;
-	size_t			allowed_size;
-	size_t			max_size;
-	unsigned char	og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+#include "tests.h"
+#include <stdio.h>
+#include <string.h>
 
+unsigned int	test_memset(void)
+{
+	unsigned int		errs;
+	size_t	allowed_size;
+	size_t	max_size;
+
+	unsigned char og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	unsigned char my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	allowed_size = 63;
 	max_size = 20;
 	errs = 0;

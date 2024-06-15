@@ -6,22 +6,22 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:13:57 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:29:29 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:56:20 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
-#include <ctype.h>
+#include "tests.h"
 #include <stdio.h>
 #include <string.h>
-int	test_bzero(void)
-{
-	int				errs;
-	size_t			allowed_size;
-	unsigned char	og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+unsigned int	test_bzero(void)
+{
+	unsigned int		errs;
+	size_t	allowed_size;
+
+	unsigned char og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	unsigned char my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	allowed_size = 60;
 	bzero(og_mem, allowed_size);
 	ft_bzero(my_mem, allowed_size);

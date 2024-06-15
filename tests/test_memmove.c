@@ -1,69 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deep_cmp.c                                         :+:      :+:    :+:   */
+/*   test_memmove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:13:57 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:29:07 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:58:29 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
-#include <ctype.h>
-#include <stdio.h>
+#include "tests.h"
 #include <string.h>
-int	test_bzero(void)
+
+unsigned int	test_memmove(void)
 {
-	int				errs;
-	size_t			allowed_size;
-	unsigned char	og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	unsigned int		errs;
+	size_t	allowed_size;
+	size_t	mem_size;
 
-	allowed_size = 60;
-	bzero(og_mem, allowed_size);
-	ft_bzero(my_mem, allowed_size);
-	if (memcmp(my_mem, og_mem, allowed_size))
-	{
-		printf("ERROR!\n");
-		errs++;
-	}
-	printf("og mem: ");
-	print_mem(og_mem, 63);
-	printf("my mem: ");
-	print_mem(my_mem, 63);
-	return (errs);
-}
-
-int	test_memcpy(void)
-{
-	int				errs;
-	size_t			allowed_size;
-	unsigned char	og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	og_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
-	unsigned char	my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	my_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
-
-	errs = 0;
-	allowed_size = 63;
-	memcpy(og_dst, og_mem, allowed_size);
-	ft_memcpy(my_dst, my_mem, allowed_size);
-	errs += test_mem(my_mem, og_mem, my_dst, og_dst, allowed_size);
-	return (errs);
-}
-
-int	test_memmove(void)
-{
-	int				errs;
-	size_t			allowed_size;
-	size_t			mem_size;
-	unsigned char	og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	og_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
-	unsigned char	my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	unsigned char	my_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
-
+	unsigned char og_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	unsigned char og_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
+	unsigned char my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	unsigned char my_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
 	errs = 0;
 	allowed_size = 30;
 	mem_size = 63;
