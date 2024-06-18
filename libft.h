@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 13:13:30 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/18 15:54:15 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c)
 #endif
