@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 10:56:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 13:18:44 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/18 12:57:36 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/18 14:27:35 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+#include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char			*src;
-	char			*dst;
+	unsigned int	start;
+	unsigned int	size;
 	unsigned int	i;
 
-	src = (char *)s;
-	dst = malloc(len);
-	if (!dst || len == 0)
-		return (NULL);
+	start = 0;
+	size = 0;
 	i = 0;
-	while (*src != '\0' && i++ < start)
-		src++;
-	i = 0;
-	while (src[i] != '\0' && i + 1 < len)
+	while (ft_strchr(set, s1[start]) && s1[start] != '\0')
+		start++;
+	while (s1[start + i + size] != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		if (ft_strchr(set, s1[start + size + i]))
+			i++;
+		else
+		{
+			size += i;
+			i = 0;
+			size++;
+		}
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (ft_substr(s1, start, size + 1));
 }

@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 11:38:02 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:13:30 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 
+char	*ft_strjoin(const char *s1, const char *s2);
 int		ft_atoi(char *str);
 void	ft_bzero(void *ptr, size_t n);
 int		ft_isalnum(int c);
@@ -37,4 +38,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
