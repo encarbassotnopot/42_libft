@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:13:57 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/15 16:53:51 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:57:27 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ static unsigned int	test_mem(size_t (*orig)(char *, const char *, size_t),
 	unsigned char my_mem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	unsigned char my_dst[] = "9876543210zyxwvutsrqponmlkjihgfedcba\0                         ";
 	errs = 0;
-	printf("Max size is: %d\n", max_size);
+	printf("Max size is: %ld\n", max_size);
 	og_out = orig(og_dst, og_mem, max_size);
 	my_out = mine(my_dst, my_mem, max_size);
 	if (og_out != my_out)
 	{
-		printf("ERROR! Return value mismatched: og returns %d, mine returns %d\n", og_out, my_out);
+		printf("ERROR! Return value mismatched: og returns %ld, mine returns %ld\n", og_out, my_out);
 		errs++;
 	}
 	if (memcmp(my_dst, og_dst, max_size))

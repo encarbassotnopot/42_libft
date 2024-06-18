@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:37:09 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/15 17:54:05 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:10:28 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,27 @@ void	print_mem(const char *start, size_t len)
 	for (int i = 0; i < len; i++)
 		printf("%02x ", start[i]);
 	printf("\n");
+}
+
+unsigned int	test_one_str(const char *my_mem, const char *og_mem)
+{
+	if (my_mem == NULL || og_mem == NULL)
+	{
+		if (my_mem == og_mem)
+			return (0);
+		printf("ERROR! Different str.\n");
+		printf("expected str: %s \n", og_mem);
+		printf("my str: %s \n", my_mem);
+		return (1);
+	}
+	if (strcmp(my_mem, og_mem))
+	{
+		printf("ERROR! Different str.\n");
+		printf("expected str: %s \n", og_mem);
+		printf("my str: %s \n", my_mem);
+		return (1);
+	}
+	return (0);
 }
 
 unsigned int	test_one_mem(unsigned char *my_mem, unsigned char *og_mem,
@@ -54,8 +75,8 @@ unsigned int	compare_outs(intptr_t orig, intptr_t mine)
 {
 	if (orig != mine)
 	{
-		printf("ERROR! Return value mismatched: og returns %d, mine returns "
-				"%d\n",
+		printf("ERROR! Return value mismatched: og returns %ld, mine returns "
+				"%ld\n",
 				orig,
 				mine);
 		return (1);
