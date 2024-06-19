@@ -1,9 +1,0 @@
-ft_toupper
-ft_tolower
-ft_strchr
-ft_strrchr
-ft_strncmp t
-ft_memchr
-ft_memcmp t
-ft_strnstr
-ft_atoi t
