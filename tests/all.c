@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:05:26 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 13:42:50 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:59:45 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,19 @@ int	main(void)
 					"ft_memcmp", "ft_strncmp", "ft_strnstr", "ft_atoi",
 					"ft_strlen", "ft_memset", "ft_bzero", "ft_memcpy",
 					"ft_memmove", "ft_strdup", "ft_substr", "ft_strjoin",
-					"ft_strtrim", "ft_split"};
+					"ft_strtrim", "ft_split", "ft_itoa", "ft_strmapi",
+					"ft_striteri"};
 	unsigned int	total_errors;
 
-	len = 17;
 	unsigned int (*tests[])() = {test_memchr, test_strchr, test_strrchr,
 		test_memcmp, test_strncmp, test_strnstr, test_atoi, test_strlen,
 		test_memset, test_bzero, test_memcpy, test_memmove, test_strdup,
-		test_substr, test_strjoin, test_strtrim, test_split};
+		test_substr, test_strjoin, test_strtrim, test_split, test_itoa,
+		test_strmapi, test_striteri};
 	total_errors = 0;
 	total_errors += test_char_isx();
 	total_errors += test_strlx();
-	for (unsigned int i = 0; i < len; i++)
+	for (unsigned int i = 0; i < sizeof(tests) / sizeof(tests[0]); i++)
 	{
 		printf("Now testing function %s\n", names[i]);
 		errors = tests[i]();
