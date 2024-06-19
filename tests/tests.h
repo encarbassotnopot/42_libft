@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:15:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 15:54:32 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:33:12 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ unsigned int	test_substr(void);
 unsigned int	test_strjoin(void);
 unsigned int	test_strtrim(void);
 unsigned int	test_split(void);
+unsigned int	test_char_isx(void);
+unsigned int	test_strlx(void);
 unsigned int	test_one_str(const char *my_mem, const char *og_mem);
 void			print_mem(const char *start, size_t len);
 int				test_mem(unsigned char *my_mem, unsigned char *og_mem,
@@ -42,4 +44,5 @@ int				test_mem(unsigned char *my_mem, unsigned char *og_mem,
 int				test_one_mem(unsigned char *my_mem, unsigned char *og_mem,
 					size_t mem_size);
 unsigned int	compare_outs(intptr_t orig, intptr_t mine);
+unsigned int	test_str_list(const char **my_list, const char **ex_list);
 #endif

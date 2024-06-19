@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:37:09 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 16:02:36 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:00:46 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ void	print_mem(const char *start, size_t len)
 	printf("\n");
 }
 
-unsigned int	test_str_list(const char **my_list, const char **ex_list)
+unsigned int	test_one_str(const char *my_mem, const char *og_mem)
 {
-	unsigned int i = 0;
-	while 
 	if (my_mem == NULL || og_mem == NULL)
 	{
 		if (my_mem == og_mem)
 			return (0);
-		printf("ERROR! Different str.\n");
+		printf("ERROR! NULL str.\n");
 		printf("expected str: %s \n", og_mem);
 		printf("my str: %s \n", my_mem);
 		return (1);
@@ -45,25 +43,18 @@ unsigned int	test_str_list(const char **my_list, const char **ex_list)
 	return (0);
 }
 
-unsigned int	test_one_str(const char *my_mem, const char *og_mem)
+unsigned int	test_str_list(const char **my_list, const char **ex_list)
 {
-	if (my_mem == NULL || og_mem == NULL)
+	unsigned int	errors;
+
+	errors = 0;
+	while (*my_list && *ex_list)
 	{
-		if (my_mem == og_mem)
-			return (0);
-		printf("ERROR! Different str.\n");
-		printf("expected str: %s \n", og_mem);
-		printf("my str: %s \n", my_mem);
-		return (1);
+		errors += test_one_str(*my_list, *ex_list);
+		my_list++;
+		ex_list++;
 	}
-	if (strcmp(my_mem, og_mem))
-	{
-		printf("ERROR! Different str.\n");
-		printf("expected str: %s \n", og_mem);
-		printf("my str: %s \n", my_mem);
-		return (1);
-	}
-	return (0);
+	return (errors);
 }
 
 unsigned int	test_one_mem(unsigned char *my_mem, unsigned char *og_mem,

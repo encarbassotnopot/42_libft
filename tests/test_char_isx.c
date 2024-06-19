@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_isx.c                                         :+:      :+:    :+:   */
+/*   test_char_isx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 10:24:19 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/14 14:05:51 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:13:03 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ unsigned int	test_sign(int start, int end, int (*orig)(int),
 
 unsigned int	test_char_isx(void)
 {
-	unsigned int	oks;
+	unsigned int	errors;
+	unsigned int	total_errors;
 
 	int (*orig[])(int) = {isalpha, isdigit, isascii, isprint, isalnum, toupper,
 		tolower};
@@ -69,10 +70,13 @@ unsigned int	test_char_isx(void)
 		do_nothing, do_nothing};
 	char *names[] = {"ft_isalpha", "ft_isdigit", "ft_isascii", "ft_isprint",
 		"ft_isalnum", "ft_toupper", "ft_tolower"};
+	total_errors = 0;
 	for (int i = 0; i < 7; i++)
 	{
 		printf("Now testing function %s\n", names[i]);
-		oks = test_sign(-10, 140, orig[i], mine[i], trans[i]);
-		printf("Done: %d errors found\n", oks);
+		errors = test_sign(-10, 140, orig[i], mine[i], trans[i]);
+		printf("Done: %d errors found\n", errors);
+		total_errors += errors;
 	}
+	return (total_errors);
 }

@@ -6,12 +6,13 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 10:56:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 13:18:44 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:51:02 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
+
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char			*src;

@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:21:00 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 15:58:20 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:56:49 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < count)
 	{
-		splits[i] = ft_substr(s, ends[0][i], ends[1][i] - ends[0][i]);
+		splits[i] = ft_substr(s, ends[0][i], ends[1][i] - ends[0][i] + 1);
 		i++;
 	}
 	splits[i] = 0;
-	free(mem[0]);
-	free(mem[1]);
-	free(mem);
+	free(ends[0]);
+	free(ends[1]);
+	free(ends);
 	return (splits);
 }
