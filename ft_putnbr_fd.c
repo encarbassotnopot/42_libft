@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 17:32:22 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 18:05:49 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/06/19 17:28:04 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/06/19 18:12:26 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putendl_fd(char *s, int fd)
+static void	ft_putabs_fd(unsigned int n, int fd)
 {
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	char	to_write;
+
+	if (n > 10)
+		ft_putabs_fd(n / 10, fd);
+	to_write = n % 10 + '0';
+	write(fd, &to_write, 1);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		ft_putabs_fd((unsigned int) ~(n - 1), fd);
+	}
+	else
+		ft_putabs_fd((unsigned int)n, fd);
 }
