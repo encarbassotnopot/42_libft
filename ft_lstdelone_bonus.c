@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:34:55 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/20 15:36:57 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:45:50 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	
+	del(lst->content);
+	free(lst);
 }
