@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:12:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 12:15:20 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/20 18:52:20 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ unsigned int	test_substr(void)
 					"lkhfdskhdfks"};
 	int				start[] = {0, 0, 1, 10, 2, 1, 5};
 	size_t			len[] = {0, 1, 5, 10, 2, 80, 5};
-	char			*expected[] = {NULL, "", "23", "", "6", "sd", "skhd"};
+	char			*expected[] = {"", "a", "23", "", "67", "sd", "skhdf"};
 
 	errs = 0;
 	for (int i = 0; i < 7; i++)

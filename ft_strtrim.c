@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:57:36 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 14:27:35 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:22:11 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 			size++;
 		}
 	}
-	return (ft_substr(s1, start, size + 1));
+	return (ft_substr(s1, start, size));
 }

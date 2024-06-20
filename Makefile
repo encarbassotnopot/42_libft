@@ -27,11 +27,11 @@ $(OBJ_FILES): %.o:%.c
 
 test: tests/tests.o
 
-tests/tests.o: $(TEST_OBJS) 
+tests/tests.o: $(TEST_OBJS) $(NAME)
 	$(CC) -o $@ -g $^ -I. -L. -lft -lbsd
 
-$(TEST_OBJS): %.o:%.c $(NAME)
-	$(CC) $< -g -c -o $@ -I. -L. -lft -lbsd
+$(TEST_OBJS): %.o:%.c
+	$(CC) $? -w -g -c -o $@ -I. -L. -lft -lbsd
 
 clean reclean:
 	rm -f $(OBJ_FILES) $(OBJ_BONUS) $(TEST_OBJS)
