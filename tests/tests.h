@@ -6,12 +6,12 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:15:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 18:03:27 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:17:28 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
-# define TESTS_T
+# define TESTS_H
 # include <stddef.h>
 # include <stdint.h>
 
