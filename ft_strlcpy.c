@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:27:59 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 18:12:37 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:47:16 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	count;
 
+	if (!dst || !src)
+		return (0);
 	count = 0;
 	while (src[count] != '\0' || count < size)
 	{

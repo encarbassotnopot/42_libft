@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:28:04 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 18:12:26 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:38:05 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	ft_putabs_fd(unsigned int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n < 0)
 	{
 		write(fd, "-", 1);

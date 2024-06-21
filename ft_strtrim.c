@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:57:36 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/20 19:22:11 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:51:22 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	size;
 	unsigned int	i;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	size = 0;
 	i = 0;

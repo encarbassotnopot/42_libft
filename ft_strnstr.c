@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:54:21 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 18:11:09 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:50:41 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*my_big;
 	char	*my_little;
 
+	if (!big || !little)
+		return (NULL);
 	my_big = (char *)big;
 	my_little = (char *)little;
 	if (*my_big == *my_little && *my_big == '\0')

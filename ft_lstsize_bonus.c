@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:27:15 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/20 15:37:58 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:29:07 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	nodes;
+	int		nodes;
+	t_list	*my_lst;
 
+	if (!lst)
+		return (0);
 	nodes = 1;
-	while (lst->next)
+	my_lst = lst;
+	while (my_lst->next)
 	{
-		lst = lst->next;
+		my_lst = my_lst->next;
 		nodes++;
 	}
 	return (nodes);

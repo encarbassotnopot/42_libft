@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 21:06:11 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/13 19:18:43 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:34:18 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*my_src;
 	char		*my_dest;
 
+	if (!dest || !src)
+		return (NULL);
 	if (dest < src)
 		return (ft_memcpy(dest, src, n));
 	my_src = src;

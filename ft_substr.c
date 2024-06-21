@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 10:56:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/20 18:51:41 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:51:51 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char			*dst;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	src = (char *)s;
 	dst = malloc(len + 1);
 	if (!dst)

@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:37:21 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 11:44:43 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:28:19 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*curr;
 	t_list	*prev;
 
+	if (!lst)
+		return ;
+	if (!*lst)
+		return ;
 	curr = *lst;
 	while (curr->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:16:07 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/10 13:16:55 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:32:35 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*my_src;
 	char		*my_dest;
 
+	if (!dest || !src)
+		return (NULL);
 	my_src = src;
 	my_dest = dest;
 	i = 0;
