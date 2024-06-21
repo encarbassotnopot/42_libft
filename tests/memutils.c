@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:37:09 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 16:32:32 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 22:51:04 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,7 @@ unsigned int	compare_outs(intptr_t orig, intptr_t mine)
 	if (orig != mine)
 	{
 		printf("ERROR! Return value mismatched: og returns %ld, mine returns "
-				"%ld\n",
-				orig,
-				mine);
+				"%ld\n", orig, mine);
 		return (1);
 	}
 	return (0);

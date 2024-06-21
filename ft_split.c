@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:21:00 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 19:41:39 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 23:49:35 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,40 +68,63 @@ static void	pop_splits(char const *s, char c, unsigned int **out)
 		out[1][found] = i - out[0][found];
 }
 
-static unsigned int	**get_split_ends(char const *s, char c, unsigned int count)
+static unsigned int	**get_split_ends(char const *s, char c)
 {
 	unsigned int	**out;
+	unsigned int	count;
 
+	count = get_split_count(s, c) + 1;
 	out = malloc(sizeof(void *) * 2);
-	out[0] = malloc(sizeof(void *) * count);
-	out[1] = malloc(sizeof(void *) * count);
-	ft_bzero(out[0], sizeof(void *) * count);
-	ft_bzero(out[1], sizeof(void *) * count);
+	if (!out)
+		return (NULL);
+	out[0] = calloc(count + 1, sizeof(int));
+	out[1] = calloc(count + 1, sizeof(int));
+	if (!out[0] || !out [1])
+		return (NULL);
 	pop_splits(s, c, out);
 	return (out);
 }
 
+static void	cleanup(unsigned int **ends, char **splits)
+{
+	unsigned int	i;
+
+	i = 0;
+	free(ends[0]);
+	free(ends[1]);
+	free(ends);
+	if (splits)
+	{
+		while (splits[i])
+			free(splits[i++]);
+		free(splits);
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	count;
 	unsigned int	**ends;
 	unsigned int	i;
 	char			**splits;
 
-	count = get_split_count(s, c);
-	splits = malloc(sizeof(void *) * (count + 1));
-	if (!splits)
+	if (!s)
 		return (NULL);
-	ends = get_split_ends(s, c, count);
+	splits = calloc((get_split_count(s, c) + 1), sizeof(void *));
+	ends = get_split_ends(s, c);
+	if (!splits || !ends)
+		return (NULL);
 	i = 0;
-	while (i < count)
+	while (ends[0][i])
 	{
 		splits[i] = ft_substr(s, ends[0][i], ends[1][i]);
+		if (!splits[i])
+		{
+			cleanup(ends, splits);
+			return (NULL);
+		}
 		i++;
 	}
 	splits[i] = 0;
-	free(ends[0]);
-	free(ends[1]);
-	free(ends);
+	cleanup(ends, NULL);
 	return (splits);
 }

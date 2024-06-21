@@ -8,6 +8,8 @@ OBJ_BONUS = $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRC_BONUS))
 TEST_SRCS = $(wildcard $(TEST_DIR)/test_*.c) $(TEST_DIR)/memutils.c $(TEST_DIR)/all.c
 TEST_OBJS = $(patsubst $(TEST_DIR)/%.c,$(TEST_BUILD)/%.o,$(TEST_SRCS))
 
+TEST_EXECS = $(addprefix $(TEST_DIR)/,tests.o nulls.o bonus.o)
+
 BUILD_DIR = build
 TEST_DIR = tests
 TEST_BUILD = $(TEST_DIR)/build
@@ -28,7 +30,7 @@ $(NAME): $$(OBJ_FILES) $(HDR_FILES)
 bonus: OBJ_FILES += $(OBJ_BONUS)
 bonus: $(NAME)
 
-$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: %.c $(HDR_FILES) Makefile | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD_DIR):
@@ -37,14 +39,14 @@ $(BUILD_DIR):
 $(TEST_BUILD):
 	mkdir -p $@ 
 
-test: $(NAME) $(TEST_DIR)/tests.o
+test: $(NAME) $(TEST_DIR)/tests.o Makefile
 
-test_bonus: bonus $(TEST_DIR)/bonus.o
+test_bonus: bonus $(TEST_DIR)/bonus.o $(TEST_DIR)/nulls.o Makefile
 
 tests/tests.o: $(TEST_OBJS)
 	$(CC) -o $@ -g $^ -I. -L. -lft -lbsd
 
-tests/bonus.o: %.o:%.c
+tests/bonus.o tests/nulls.o: %.o:%.c
 	$(CC) -o $@ -g $< -I. -L. -lft 
 
 $(TEST_BUILD)/%.o: $(TEST_DIR)/%.c | $(TEST_BUILD)
@@ -54,7 +56,7 @@ clean reclean:
 	rm -rf $(BUILD_DIR) $(TEST_BUILD)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(TEST_EXECS)
 
 re: fclean all reclean
 
