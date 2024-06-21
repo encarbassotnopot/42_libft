@@ -23,7 +23,6 @@ all: $(NAME)
 
 .SECONDEXPANSION:
 $(NAME): $$(OBJ_FILES) $(HDR_FILES)
-	@echo OBJ_FILES $(OBJ_FILES)
 	$(AR) $(ARFLAGS) $@ $?
 
 bonus: OBJ_FILES += $(OBJ_BONUS)
