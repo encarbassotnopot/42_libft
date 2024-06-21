@@ -5,7 +5,7 @@ HDR_FILES = libft.h
 SRC_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 OBJ_BONUS = $(patsubst %.c,%.o,$(SRC_BONUS))
 
-TEST_SRCS = $(wildcard tests/*.c)
+TEST_SRCS = $(wildcard tests/test_*.c) tests/memutils.c tests/all.c
 TEST_OBJS = $(patsubst %.c,%.o,$(TEST_SRCS))
 
 NAME = libft.a
@@ -20,15 +20,20 @@ all: $(NAME)
 $(NAME): $(OBJ_FILES) $(HDR_FILES)
 	$(AR) $(ARFLAGS) $@ $?
 
-bonus: $(OBJ_BONUS) | $(NAME)
+bonus: $(OBJ_BONUS)
 	$(AR) $(ARFLAGS) $(NAME) $?
 
-$(OBJ_FILES): %.o:%.c
+$(OBJ_FILES): %.o:%.c 
 
 test: tests/tests.o
 
+test_bonus: tests/bonus.o
+
 tests/tests.o: $(TEST_OBJS) $(NAME)
 	$(CC) -o $@ -g $^ -I. -L. -lft -lbsd
+
+tests/bonus.o: %.o:%.c | bonus
+	$(CC) -o $@ -g $^ -I. -L. -lft 
 
 $(TEST_OBJS): %.o:%.c
 	$(CC) $? -w -g -c -o $@ -I. -L. -lft -lbsd

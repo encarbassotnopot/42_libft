@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:12:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/18 13:16:41 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 11:36:01 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ unsigned int	test_strtrim(void)
 	unsigned int	errs;
 	char			*my_out;
 	char			*str1[] = {"", "sdfkjhsdk", "asbncv", "xascvcbaaac",
-					"0910232jhsgdfjsdgfj324832", "0910232324832"};
+					"0910232jhsgdfj6837648236sdgfj324832", "0910232324832"};
 	char			*sets[] = {"sdfgd", "", "abc", "abc", "0123456789", "0123456789"};
-	char			*expected[] = {"", "sdfkjhsdk", "sbncv", "xascv", "jhsgdfjsdgfj", ""};
+	char			*expected[] = {"", "sdfkjhsdk", "sbncv", "xascv", "jhsgdfj6837648236sdgfj", ""};
 
 	errs = 0;
 	for (int i = 0; i < 6; i++)
