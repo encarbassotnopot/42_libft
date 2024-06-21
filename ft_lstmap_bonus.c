@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:37:39 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 11:13:20 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/21 16:27:22 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,7 +24,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst->next)
 	{
 		current->content = f(lst->content);
-		
 		current->next = malloc(sizeof(t_list));
 		if (!current->next)
 		{

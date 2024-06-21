@@ -23,6 +23,7 @@ all: $(NAME)
 
 .SECONDEXPANSION:
 $(NAME): $$(OBJ_FILES) $(HDR_FILES)
+	$(AR) $(ARFLAGS) $@ $?
 
 bonus: OBJ_FILES += $(OBJ_BONUS)
 bonus: $(NAME)
