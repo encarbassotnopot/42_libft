@@ -1,0 +1,4 @@
+Testing putchar.
+Testing putstr.
+Testing putendl.
+Testing putnbr: 0, 1, -1, 10, -10, 9, 11, 23423, -293746, -2147483648, 2147483647, 24548

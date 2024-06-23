@@ -62,6 +62,8 @@ re: fclean all reclean
 
 rebonus: fclean bonus reclean
 
+retest: fclean bonus test test_bonus 
+
 info:
 	$(info $(SRC_FILES))
 	$(info $(SRC_BONUS))

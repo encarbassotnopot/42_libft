@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:54:53 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 14:02:02 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/23 13:51:06 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ unsigned int	test_split(void)
 	errs = 0;
 	for (int i = 0; i < 6; i++)
 	{
-		printf("Testing ft_split(\"%s\")\n", strs[i]);
+		printf("Testing ft_split(\"%s\", ' ')\n", strs[i]);
 		my_out = ft_split(strs[i], ' ');
 		errs += test_str_list((const char **)my_out, expected[i]);
 		printf("Freeing values.\n");
