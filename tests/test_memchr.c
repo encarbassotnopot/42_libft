@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 17:03:42 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/15 18:14:13 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/22 09:33:46 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -37,6 +37,8 @@ unsigned int	test_memchr(void)
 			(intptr_t)ft_memchr(mem[2], 'Q', 27));
 	errs += compare_outs((intptr_t)memchr(mem[2], 'q', 27),
 			(intptr_t)ft_memchr(mem[2], 'q', 27));
+	errs += compare_outs((intptr_t)memchr(mem[0], '\0', 27),
+			(intptr_t)ft_memchr(mem[0], '\0', 27));
 	free(mem);
 	return (errs);
 }

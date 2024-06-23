@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 10:56:40 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/22 00:20:37 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/22 13:19:54 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	src = (char *)s;
 	len = real_len(s, start, len);
-	dst = calloc(len, sizeof(char));
+	dst = calloc(len + 1, sizeof(char));
 	if (!dst)
 		return (NULL);
 	i = 0;
@@ -47,5 +47,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		dst[i] = src[i + start];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }

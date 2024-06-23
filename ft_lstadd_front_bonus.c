@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:25:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 19:27:58 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/23 11:05:43 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
+	if (!new)
 		return ;
-	if (!*lst)
-		return ;
-	new->next = *lst;
+	if (*lst)
+		new->next = *lst;
 	*lst = new;
 }

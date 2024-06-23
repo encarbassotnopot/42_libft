@@ -17,7 +17,7 @@ TEST_BUILD = $(TEST_DIR)/build
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 ARFLAGS = rcs
 

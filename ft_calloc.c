@@ -6,12 +6,13 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:48:18 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 23:11:30 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/22 13:16:43 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
+#include <limits.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

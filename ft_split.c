@@ -6,11 +6,12 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:21:00 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/21 23:49:35 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/22 14:33:12 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 static unsigned int	get_split_count(char const *s, char c)
@@ -60,29 +61,18 @@ static void	pop_splits(char const *s, char c, unsigned int **out)
 		{
 			in_delim = 1;
 			out[1][found] = i - out[0][found];
+			printf("\nsplit's #%u start is: %u, len is: %u\n", found,
+				out[0][found], out[1][found]);
 			found++;
 		}
 		i++;
 	}
 	if (out[1][found] == 0)
+	{
 		out[1][found] = i - out[0][found];
-}
-
-static unsigned int	**get_split_ends(char const *s, char c)
-{
-	unsigned int	**out;
-	unsigned int	count;
-
-	count = get_split_count(s, c) + 1;
-	out = malloc(sizeof(void *) * 2);
-	if (!out)
-		return (NULL);
-	out[0] = calloc(count + 1, sizeof(int));
-	out[1] = calloc(count + 1, sizeof(int));
-	if (!out[0] || !out [1])
-		return (NULL);
-	pop_splits(s, c, out);
-	return (out);
+		printf("\nsplit's #%u start is: %u, len is: %u\n", found, out[0][found],
+			out[1][found]);
+	}
 }
 
 static void	cleanup(unsigned int **ends, char **splits)
@@ -101,22 +91,48 @@ static void	cleanup(unsigned int **ends, char **splits)
 	}
 }
 
+static unsigned int	**get_split_ends(char const *s, char c)
+{
+	unsigned int	**out;
+	unsigned int	count;
+
+	count = get_split_count(s, c) + 1;
+	out = malloc(sizeof(void *) * 2);
+	if (!out)
+		return (NULL);
+	out[0] = ft_calloc(count + 1, sizeof(int));
+	out[1] = ft_calloc(count + 1, sizeof(int));
+	if (!out[0] || !out[1])
+	{
+		cleanup(out, NULL);
+		return (NULL);
+	}
+	pop_splits(s, c, out);
+	return (out);
+}
+
+
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	**ends;
 	unsigned int	i;
 	char			**splits;
 
+	printf("\nsplitting \"%s\" at char \"%c\" (%d) \n", s, c, c);
 	if (!s)
 		return (NULL);
-	splits = calloc((get_split_count(s, c) + 1), sizeof(void *));
+	splits = ft_calloc((get_split_count(s, c) + 1), sizeof(void *));
 	ends = get_split_ends(s, c);
 	if (!splits || !ends)
+	{
+		cleanup(ends, splits);
 		return (NULL);
+	}
 	i = 0;
-	while (ends[0][i])
+	while (ends[0][i] != 0 && ends[1][i] != 0)
 	{
 		splits[i] = ft_substr(s, ends[0][i], ends[1][i]);
+		printf("\nsplit #%u is \"%s\"\n", i, splits[i]);
 		if (!splits[i])
 		{
 			cleanup(ends, splits);

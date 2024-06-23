@@ -6,17 +6,17 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:45:18 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/19 18:09:00 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/23 10:57:16 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "tests.h"
 #include <fcntl.h>
-#include <unistd.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 unsigned int	test_putx_fd(void)
 {
@@ -24,7 +24,8 @@ unsigned int	test_putx_fd(void)
 	int		fd;
 	char	*filename;
 	char	*putchar_line;
-	int		ints[] = {0, 1, -1, 23423, -293746, INT_MIN, INT_MAX};
+	int		ints[] = {0, 1, -1, 10, -10, 9, 11, 23423, -293746, INT_MIN,
+				INT_MAX};
 
 	filename = "./tests/last_output.txt";
 	putchar_line = "Testing putchar.";
@@ -44,7 +45,7 @@ unsigned int	test_putx_fd(void)
 	ft_putchar_fd('\n', fd);
 	ft_putendl_fd("Testing putendl.", fd);
 	ft_putstr_fd("Testing putnbr: ", fd);
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < (sizeof(ints)/sizeof(*ints)); i++)
 	{
 		ft_putnbr_fd(ints[i], fd);
 		ft_putstr_fd(", ", fd);
