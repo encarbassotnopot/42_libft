@@ -16,12 +16,11 @@ ARFLAGS = rcs
 
 all: $(NAME)
 
-.SECONDEXPANSION:
-$(NAME): $$(OBJ_FILES) $(HDR_FILES)
+$(NAME): $(OBJ_FILES) $(HDR_FILES)
 	$(AR) $(ARFLAGS) $@ $?
 
-bonus: OBJ_FILES += $(OBJ_BONUS)
-bonus: $(NAME)
+bonus: $(OBJ_FILES) $(OBJ_BONUS) $(HDR_FILES)
+	$(AR) $(ARFLAGS) $(NAME) $?
 
 $(BUILD_DIR)/%.o: %.c $(HDR_FILES) Makefile | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
