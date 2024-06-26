@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:21:45 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/06/22 13:16:15 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/06/26 13:54:42 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -26,7 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 			candidate = (char *)s;
 		s++;
 	}
-	if (c == '\0')
+	if (my_chr == '\0')
 		return ((char *)s);
 	return (candidate);
 }
