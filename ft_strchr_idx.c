@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr_idx.c                                    :+:      :+:    :+:   */
+/*   ft_strchr_idx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/03 15:07:03 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2024/07/03 15:46:26 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2024/07/03 15:48:34 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-
-int	ft_memchr_idx(const void *s, int c, size_t n)
+int	*ft_strchr_idx(const char *s, int c)
 {
-	int	i;
-	unsigned char	*my_s;
-	unsigned char	my_c;
+	unsigned char	*my_str;
+	unsigned char	my_chr;
+	int				i;
 
-	if (!s)
-		return (0);
-	my_s = (unsigned char *)s;
-	my_c = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	if (!s)
+		return (-1);
+	my_str = (unsigned char *)s;
+	my_chr = (unsigned char)c;
+	while (my_str[count] != my_chr)
 	{
-		if (my_s[i] == my_c)
-		{
-			return (i);
-		}
-		i++;
+		if (my_str[count] == '\0')
+			return (-1);
+		count++;
 	}
-	return (-1);
+	return (count);
 }
