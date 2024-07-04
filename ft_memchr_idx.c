@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/04 10:17:58 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/04 12:54:06 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memchr_idx(const void *s, int c, size_t n)
 	my_s = (unsigned char *)s;
 	my_c = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	while ((size_t) i < n)
 	{
 		if (my_s[i] == my_c)
 		{

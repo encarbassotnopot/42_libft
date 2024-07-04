@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utoa.c                                             :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:11:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/04 10:54:04 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/04 12:55:51 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static size_t	get_str_size(unsigned int n)
 char	*ft_itoa(unsigned int n)
 {
 	char			*out;
-	unsigned int	abs;
 	size_t			len;
 
 	len = get_str_size(n);
