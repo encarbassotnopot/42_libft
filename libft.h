@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/03 15:49:30 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/04 10:35:44 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
-unsigned int		ft_raw_atoi(const char *str);
+int					ft_raw_atoi(const char *str);
+int					ft_raw_atoi_fwd(char **str);
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
 int					ft_strchr_idx(const char *s, int c);

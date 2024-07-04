@@ -6,14 +6,14 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:06:37 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/03 13:32:55 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/04 10:34:44 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
-unsigned int	ft_raw_atoi_fwd(char **str)
+int	ft_raw_atoi_fwd(char **str)
 {
-	unsigned int	result;
+	int	result;
 
 	if (!str)
 		return (0);

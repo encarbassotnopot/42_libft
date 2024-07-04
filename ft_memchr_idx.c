@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:51:25 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/03 15:07:03 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/04 10:17:58 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_memchr_idx(const void *s, int c, size_t n)
 {
-	int	i;
+	int				i;
 	unsigned char	*my_s;
 	unsigned char	my_c;
 
