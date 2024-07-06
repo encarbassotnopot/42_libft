@@ -6,12 +6,12 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:11:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/06 10:12:05 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:28:47 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	get_str_size(unsigned int n, unsigned int radix)
 {
@@ -26,11 +26,13 @@ static size_t	get_str_size(unsigned int n, unsigned int radix)
 	return (len);
 }
 
-char	*ft_utoa_hex(unsigned int n, unsigned int radix, const char *base)
+char	*ft_utoa_hex(unsigned int n, const char *base)
 {
-	char			*out;
-	size_t			len;
+	char	*out;
+	size_t	radix;
+	size_t	len;
 
+	radix = ft_strlen(base);
 	len = get_str_size(n, radix);
 	out = ft_calloc(len, sizeof(char));
 	if (!out)
