@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_sttoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:11:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/06 11:16:30 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/06 11:45:04 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_str_size(unsigned int n, unsigned int radix)
+static int	get_str_size(size_t n, unsigned int radix)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ static int	get_str_size(unsigned int n, unsigned int radix)
 	return (len);
 }
 
-char	*ft_utoa_base(unsigned int n, const char *base)
+char	*ft_sttoa_base(size_t n, const char *base)
 {
 	char	*out;
 	size_t	radix;

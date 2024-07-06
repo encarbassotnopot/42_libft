@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:08:16 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/06 10:38:40 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/06 11:45:30 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int					ft_lstsize(t_list *lst);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memchr_idx(const void *s, int c, size_t n);
 char				*ft_utoa_base(unsigned int n, const char *base);
+char				*ft_sttoa_base(size_t n, const char *base);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
