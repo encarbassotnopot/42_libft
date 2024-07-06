@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:11:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/06 10:28:47 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:39:11 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	get_str_size(unsigned int n, unsigned int radix)
 	return (len);
 }
 
-char	*ft_utoa_hex(unsigned int n, const char *base)
+char	*ft_utoa_base(unsigned int n, const char *base)
 {
 	char	*out;
 	size_t	radix;
