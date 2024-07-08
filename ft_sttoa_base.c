@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:11:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2024/07/06 11:45:04 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:24:21 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	get_str_size(size_t n, unsigned int radix)
 	int	len;
 
 	len = 1;
-	while (n > radix)
+	while (n >= radix)
 	{
 		n /= radix;
 		len++;
