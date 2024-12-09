@@ -29,7 +29,7 @@ clean reclean:
 	rm -rf $(BUILD_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME).a $(NAME).so
 
 re: fclean all reclean
 
